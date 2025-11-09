@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Management Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #343a40;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+        .sidebar h2 {
+            margin-bottom: 30px;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+        tr:hover {
+            background-color: #e9ecef;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+        }
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Payroll Dashboard</h2>
+    <a href="#">Home</a>
+    <a href="#">Payroll Reports</a>
+    <a href="#">Employee Management</a>
+    <a href="#">Settings</a>
+    <a href="#">Logout</a>
+</div>
+
+<div class="main-content">
+    <div class="container">
+        <h1>Payroll Reports</h1>
+        <table id="payrollTable">
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                    <th>Month</th>
+                    <th>Salary</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Anbu</td>
+                    <td>January</td>
+                    <td>$5000</td>
+                    <td><button class="btn btn-danger" onclick="removeReport(this)">Remove</button></td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Smith</td>
+                    <td>January</td>
+                    <td>$5500</td>
+                    <td><button class="btn btn-danger" onclick="removeReport(this)">Remove</button></td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Selva</td>
+                    <td>January</td>
+                    <td>$5500</td>
+                    <td><button class="btn btn-danger" onclick="removeReport(this)">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn" onclick="addReport()">Add Report</button>
+    </div>
+</div>
+
+<script>
+    function addReport() {
+        const table = document.getElementById('payrollTable').getElementsByTagName('tbody')[0];
+        const newRow = table.insertRow();
+        
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+        const cell3 = newRow.insertCell(2);
+        const cell4 = newRow.insertCell(3);
+        const cell5 = newRow.insertCell(4);
+        
+        cell1.innerHTML = '004';
+        cell2.innerHTML = 'New Employee';
+        cell3.innerHTML = 'February';
+        cell4.innerHTML = '$6000';
+        cell5.innerHTML = '<button class="btn btn-danger" onclick="removeReport(this)">Remove</button>';
+    }
+
+    function removeReport(button) {
+        const row = button.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+    }
+</script>
+
+</body>
+</html>

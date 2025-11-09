@@ -1,0 +1,80 @@
+<style>
+  /* Basic styles */
+  body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  h1 {
+    margin: 10px 0;
+    text-align: center;
+    color: #333;
+  }
+  p {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #FBEAEB;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  th {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  .actions a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px;
+  }
+  .actions a:hover {
+    background-color: #ddd;
+    border-radius: 3px;
+  }
+</style>
+<body>
+  <h1>Employees</h1>
+  <p><a href="add_employee.html" style="background-color: #4CAF50; color: #fff; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Add Employee</a></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>12345</td>
+        <td>John Doe</td>
+        <td>Marketing</td>
+        <td class="actions">
+          <a href="#">Edit</a> | <a href="#">Delete</a>
+        </td>
+      </tr>
+      <tr>
+        <td>67890</td>
+        <td>Jane Smith</td>
+        <td>Finance</td>
+        <td class="actions">
+          <a href="#">Edit</a> | <a href="#">Delete</a>
+        </td>
+      </tr>
+      <!-- Add more rows as needed -->
+    </tbody>
+  </table>
+</body>

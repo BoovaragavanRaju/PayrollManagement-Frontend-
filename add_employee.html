@@ -1,0 +1,76 @@
+<style>
+  /* Basic styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  h1 {
+    margin: 10px 0;
+    text-align: center;
+    color: #333;
+  }
+  form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  input[type="text"],
+  select {
+    width: calc(100% - 22px); /* Adjusted width to account for padding and borders */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="rgba(0,0,0,0.4)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-7-7h14l-7 7z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 14px;
+    padding-right: 30px;
+  }
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  button[type="submit"]:hover {
+    background-color: #45a049; /* Darker shade of green */
+  }
+</style>
+<body>
+  <h1>Add Employee</h1>
+  <form action="#">
+    <label for="employeeID">Employee ID:</label>
+    <input type="text" id="employeeID" name="employeeID" required>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="department">Department:</label>
+    <select id="department" name="department">
+      <option value="">Select Department</option>
+      <option value="Marketing">Marketing</option>
+      <option value="Sales">Sales</option>
+      <option value="Engineering">Engineering</option>
+    </select>
+    <button type="submit">Add Employee</button>
+  </form>
+</body>
